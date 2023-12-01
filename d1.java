@@ -15,5 +15,7 @@ public class d1 {
         }
 
         System.out.println(sum);
+        //indexOf() for every spelt number, find lowest one and compare to first real digit
+        //lastIndexOf() and compare to last real digit
     }
 }
