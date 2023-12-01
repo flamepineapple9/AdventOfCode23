@@ -21,8 +21,39 @@ public class d1 {
             input.set(i, input.get(i).replaceAll("[^\\d.]", ""));
             first = input.get(i).substring(0,1);
             last = input.get(i).substring(input.get(i).length()-1);
-            
-            if(copy.indexOf("one") != -1 && copy.indexOf("one") < copy.indexOf(first)){
+
+
+            ArrayList<String> dictionary = new ArrayList<String>();
+            dictionary.add("one1");
+            dictionary.add("two2");
+            dictionary.add("three3");
+            dictionary.add("four4");
+            dictionary.add("five5");
+            dictionary.add("six6");
+            dictionary.add("seven7");
+            dictionary.add("eight8");
+            dictionary.add("nine9");
+            dictionary.add("zero0");
+
+            for(int k = 0; k < dictionary.size(); k++){
+                if(copy.indexOf(dictionary.get(k).subString(0, dictionary.get(k).length-1)) < copy.indexOf(first)){
+                    first = dictionary.get(k).subString(0, dictionary.get(k).length-1);
+                }
+                if(copy.lastIndexOf(dictionary.get(k).subString(0, dictionary.get(k).length-1)) > copy.lastIndexOf(last)){
+                    last = dictionary.get(k).subString(0, dictionary.get(k).length-1);
+                }
+            }
+
+            for(int k = 0; k < dictionary.size(); k++){
+                if(first == dictionary.get(k).substring(0, dictionary.get(k).length-1)){
+                    first = dictionary.get(k).substring(dictionary.get(k).length-1, dictionary.get(k).length);
+                }
+                if(last == dictionary.get(k).substring(0, dictionary.get(k).length-1)){
+                    last = dictionary.get(k).substring(dictionary.get(k).length-1, dictionary.get(k).length);
+                }
+            }
+            sum += Integer.parseInt(first + last);
+            /*if(copy.indexOf("one") != -1 && copy.indexOf("one") < copy.indexOf(first)){
                 first = "1";
             }
             if(copy.indexOf("two") != -1 && copy.indexOf("two") < copy.indexOf(first)){
@@ -85,11 +116,11 @@ public class d1 {
                 last = "0";
             }
             
-            sum += Integer.parseInt(first + last);
+            sum += Integer.parseInt(first + last);*/
+
+            
         }
 
         System.out.println(sum);
-        //indexOf() for every spelt number, find lowest one and compare to first real digit
-        //lastIndexOf() and compare to last real digit
     }
 }
