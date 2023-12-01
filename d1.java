@@ -16,7 +16,7 @@ public class d1 {
         
         for(int i = 0; i < input.size();i++){
             String first = "";
-            String last = ""
+            String last = "";
 
             input.set(i, input.get(i).replaceAll("[^\\d.]", ""));
             first = input.get(i).substring(0,1);
